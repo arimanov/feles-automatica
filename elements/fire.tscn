@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://c74mri5yvbxx5"]
+
+[ext_resource type="Texture2D" uid="uid://rh4jyxw5srif" path="res://assets/fire.png" id="1_0v6kf"]
+[ext_resource type="Script" path="res://elements/fire.gd" id="1_ndu6g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45xwx"]
+atlas = ExtResource("1_0v6kf")
+region = Rect2(0, 0, 130, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iltvw"]
+atlas = ExtResource("1_0v6kf")
+region = Rect2(130, 0, 130, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmi02"]
+atlas = ExtResource("1_0v6kf")
+region = Rect2(260, 0, 130, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3y2g"]
+atlas = ExtResource("1_0v6kf")
+region = Rect2(390, 0, 130, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xryhq"]
+atlas = ExtResource("1_0v6kf")
+region = Rect2(520, 0, 130, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ylgrs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iltvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmi02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3y2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xryhq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_10kcd"]
+radius = 5.60657
+height = 112.13
+
+[node name="Fire" type="CharacterBody2D"]
+top_level = true
+position = Vector2(124, 115)
+scale = Vector2(0.284248, 0.286051)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_ndu6g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ylgrs")
+autoplay = "default"
+frame = 2
+frame_progress = 0.631033
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.60657, -11.2131)
+shape = SubResource("CapsuleShape2D_10kcd")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-5.60647, -5.60651)
+scale = Vector2(1.1213, 6.16716)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

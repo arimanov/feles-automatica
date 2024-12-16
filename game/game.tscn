@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsx1h2e2slu1t"]
+
+[ext_resource type="Texture2D" uid="uid://cqvxvevedwya8" path="res://assets/background.jpg" id="1_osq1t"]
+[ext_resource type="PackedScene" uid="uid://cfghk6066xy2o" path="res://elements/mycat.tscn" id="2_y1aun"]
+[ext_resource type="PackedScene" uid="uid://y1uxv3iert3x" path="res://elements/wall.tscn" id="3_0lf41"]
+[ext_resource type="PackedScene" uid="uid://bjeaamcr1pqs0" path="res://elements/enemy_group.tscn" id="4_qr3iw"]
+
+[node name="Game" type="Node2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(128, 120)
+scale = Vector2(0.711111, 1)
+texture = ExtResource("1_osq1t")
+
+[node name="mycat" parent="." instance=ExtResource("2_y1aun")]
+position = Vector2(129, 216)
+
+[node name="wall" parent="." instance=ExtResource("3_0lf41")]
+
+[node name="wall2" parent="." instance=ExtResource("3_0lf41")]
+position = Vector2(256, 0)
+
+[node name="EnemyGroup" parent="." instance=ExtResource("4_qr3iw")]
+position = Vector2(0, -1)

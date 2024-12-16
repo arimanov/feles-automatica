@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjeaamcr1pqs0"]
+
+[ext_resource type="PackedScene" uid="uid://ty6igpi2lm3r" path="res://elements/enemy.tscn" id="1_4tnep"]
+[ext_resource type="Script" path="res://elements/enemy_group.gd" id="1_d0e1c"]
+
+[node name="EnemyGroup" type="Node2D"]
+scale = Vector2(0.846817, 0.846817)
+script = ExtResource("1_d0e1c")
+
+[node name="Enemy" parent="." instance=ExtResource("1_4tnep")]
+position = Vector2(44.8739, 29.5223)
+
+[node name="Enemy2" parent="." instance=ExtResource("1_4tnep")]
+position = Vector2(104.874, 29.5223)
+
+[node name="Enemy3" parent="." instance=ExtResource("1_4tnep")]
+position = Vector2(164.874, 29.5223)
+
+[node name="Enemy4" parent="." instance=ExtResource("1_4tnep")]
+position = Vector2(224.874, 29.5223)
+
+[node name="Enemy5" parent="." instance=ExtResource("1_4tnep")]
+position = Vector2(61.8739, 69.5223)
+scale = Vector2(1, 1)
+
+[node name="Enemy6" parent="." instance=ExtResource("1_4tnep")]
+position = Vector2(121.874, 69.5223)
+scale = Vector2(1, 1)
+
+[node name="Enemy7" parent="." instance=ExtResource("1_4tnep")]
+position = Vector2(181.874, 69.5223)
+scale = Vector2(1, 1)
+
+[node name="Enemy8" parent="." instance=ExtResource("1_4tnep")]
+position = Vector2(241.874, 69.5223)
+scale = Vector2(1, 1)
