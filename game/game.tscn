@@ -22,4 +22,5 @@ position = Vector2(129, 216)
 position = Vector2(256, 0)
 
 [node name="EnemyGroup" parent="." instance=ExtResource("4_qr3iw")]
-position = Vector2(0, -1)
+position = Vector2(-3, -7)
+scale = Vector2(0.846817, 0.846817)
