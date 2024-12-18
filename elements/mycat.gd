@@ -15,3 +15,6 @@ func shot():
 	var bullet = FIRE_SCENE.instantiate()
 	bullet.global_position = global_position + Vector2(0, -10)
 	add_child(bullet)
+
+func take_damage():
+	pass

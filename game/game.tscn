@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsx1h2e2slu1t"]
+[gd_scene load_steps=6 format=3 uid="uid://dsx1h2e2slu1t"]
 
 [ext_resource type="Texture2D" uid="uid://cqvxvevedwya8" path="res://assets/background.jpg" id="1_osq1t"]
 [ext_resource type="PackedScene" uid="uid://cfghk6066xy2o" path="res://elements/mycat.tscn" id="2_y1aun"]
 [ext_resource type="PackedScene" uid="uid://y1uxv3iert3x" path="res://elements/wall.tscn" id="3_0lf41"]
 [ext_resource type="PackedScene" uid="uid://bjeaamcr1pqs0" path="res://elements/enemy_group.tscn" id="4_qr3iw"]
+[ext_resource type="PackedScene" uid="uid://dubkbc8aryguv" path="res://elements/enemy_bullet.tscn" id="5_kdqj2"]
 
 [node name="Game" type="Node2D"]
 
@@ -23,4 +24,6 @@ position = Vector2(256, 0)
 
 [node name="EnemyGroup" parent="." instance=ExtResource("4_qr3iw")]
 position = Vector2(-3, -7)
-scale = Vector2(0.846817, 0.846817)
+
+[node name="EnemyBullet" parent="." instance=ExtResource("5_kdqj2")]
+position = Vector2(125, 103)

@@ -34,3 +34,9 @@ position = Vector2(241.874, 69.5223)
 [node name="BlockTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="ShotTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]

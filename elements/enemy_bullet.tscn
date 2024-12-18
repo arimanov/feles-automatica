@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://dubkbc8aryguv"]
+
+[ext_resource type="Script" path="res://elements/enemy_bullet.gd" id="1_v48j8"]
+[ext_resource type="Texture2D" uid="uid://y11x1dqqmj8b" path="res://assets/Bullet 24x24 Free Part 2A.png" id="1_wgmwg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fu1c"]
+atlas = ExtResource("1_wgmwg")
+region = Rect2(192, 216, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myth7"]
+atlas = ExtResource("1_wgmwg")
+region = Rect2(216, 216, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0ewh"]
+atlas = ExtResource("1_wgmwg")
+region = Rect2(240, 216, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cttr0"]
+atlas = ExtResource("1_wgmwg")
+region = Rect2(264, 216, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deaa4"]
+atlas = ExtResource("1_wgmwg")
+region = Rect2(288, 216, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3tkx"]
+atlas = ExtResource("1_wgmwg")
+region = Rect2(312, 216, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4ls7"]
+atlas = ExtResource("1_wgmwg")
+region = Rect2(336, 216, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r47li"]
+atlas = ExtResource("1_wgmwg")
+region = Rect2(360, 216, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n0ebd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fu1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myth7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0ewh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cttr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deaa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3tkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4ls7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r47li")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rd8ko"]
+radius = 6.08276
+
+[node name="EnemyBullet" type="CharacterBody2D"]
+top_level = true
+position = Vector2(52, 30)
+scale = Vector2(0.716867, 0.713899)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_v48j8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n0ebd")
+autoplay = "default"
+frame_progress = 0.985877
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rd8ko")
+debug_color = Color(0.570684, 0.548279, 0.262122, 0.42)
